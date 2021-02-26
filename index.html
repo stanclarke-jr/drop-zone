@@ -1,11 +1,59 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Drop Zone</title>
+<html lang="en">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&family=Rozha+One&display=swap" rel="stylesheet">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;900&family=Rozha+One&display=swap">
+  <link rel="stylesheet" href="/css/style.css">
+  <title>Drop Zone</title>
 </head>
+
 <body>
+  <nav>
+    <span id="nav-text-1">DROP</span>
+    <span id="nav-text-2">ZONE</span>
+  </nav>
+  <main class="container">
+    <div class="countdown-display">
+      <h1>LEEZY BOOST 103</h1>
+      <section>
+        <div class="unit-container">
+          <div id="days">
+            <!-- <span></span> -->
+            <span>1</span>
+            <span>3</span>
+          </div>
+          <div class="unit-text">DAYS</div>
+        </div>
+        <div class="unit-container">
+          <div id="hours">
+            <span>0</span>
+            <span>8</span>
+          </div>
+          <div class="unit-text">HOURS</div>
+        </div>
+        <div class="unit-container">
+          <div id="minutes">
+            <span>1</span>
+            <span>2</span>
+          </div>
+          <div class="unit-text">MINS</div>
+        </div>
+        <div class="unit-container">
+          <div id="seconds">
+            <span>0</span>
+            <span>5</span>
+          </div>
+          <div class="unit-text">SECS</div>
+        </div>
+      </section>
+      <div id="until-drop">UNTIL DROP</div>
+    </div>
+
+  </main>
+  <script type="module" src="/js/helpers.js"></script>
+  <script type="module" src="/js/countdown-timer.js"></script>
 </body>
 </html>
