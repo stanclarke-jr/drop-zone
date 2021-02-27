@@ -11,25 +11,25 @@ const minutes = 12;
 const seconds = 5;
 
 // Calculate total duration in ms - uses calculations in the helper.js
-const daysInMs = dayInMs * `${days}`;
-const hoursInMs = hourInMs * `${hours}`
-const minutesInMs = minuteInMs * `${minutes}`
-const secondsInMs = secondInMs * `${seconds}`;
-const duration = daysInMs + hoursInMs + minutesInMs + secondsInMs;
+const duration =
+  dayInMs * `${days}` +
+  hourInMs * `${hours}` +
+  minuteInMs * `${minutes}` +
+  secondInMs * `${seconds}`;
 
 // Determine target date
 const targetDate = Date.now() + new Date(duration).getTime();
 
-function displayTimeleft(timeLeft) {
-  // Convert above ms into days, hours, minutes & seconds left
-  let daysLeft = Math.floor(timeLeft / dayInMs);
-  let hoursLeft = Math.floor(timeLeft % dayInMs / hourInMs);
-  let minutesLeft = Math.floor(timeLeft % hourInMs / minuteInMs);
-  let secondsLeft = Math.floor(timeLeft % minuteInMs / secondInMs);
+function displayTimeleft(timeLeftInMs) {
+  // Convert `timeLeftInMs` into days, hours, minutes & seconds left
+  let daysLeft = Math.floor(timeLeftInMs / dayInMs);
+  let hoursLeft = Math.floor(timeLeftInMs % dayInMs / hourInMs);
+  let minutesLeft = Math.floor(timeLeftInMs % hourInMs / minuteInMs);
+  let secondsLeft = Math.floor(timeLeftInMs % minuteInMs / secondInMs);
 
   // Add leading `0`s & split string to display in individual spans
-  // daysLeft < 100 ? daysLeft = `0${daysLeft}` : daysLeft; // If using 3-digit year
-  daysLeft < 10 ? daysLeft = `0${daysLeft}`.split('') : daysLeft; // Add additional `0` using 3-digit year
+  // daysLeft < 100 ? daysLeft = `0${daysLeft}` : daysLeft; // If using 3-digits for `days`
+  daysLeft < 10 ? daysLeft = `0${daysLeft}`.split('') : daysLeft; // Add an additional `0` if using 3-digit `days`
   daysLeft >= 10 ? daysLeft = `${daysLeft}`.split('') : daysLeft;
   hoursLeft < 10 ? hoursLeft = `0${hoursLeft}`.split('') : hoursLeft;
   hoursLeft >= 10 ? hoursLeft = `${hoursLeft}`.split('') : hoursLeft;
@@ -41,7 +41,7 @@ function displayTimeleft(timeLeft) {
   // Display the result in each individual span element
   daysEl[0].textContent = daysLeft[0];
   daysEl[1].textContent = daysLeft[1];
-  // daysEl[2].textContent = daysLeft[2]; // If using 3-digit year
+  // daysEl[2].textContent = daysLeft[2]; // If using 3-digits for `days`
   hoursEl[0].textContent = hoursLeft[0];
   hoursEl[1].textContent = hoursLeft[1];
   minutesEl[0].textContent = minutesLeft[0];
