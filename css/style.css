@@ -99,7 +99,7 @@ section {
 }
 
 /*** iPhone 8 & others ***/
-@media screen and (min-width: 300px) and (max-width: 800px) {
+@media screen and (min-width: 300px) and (max-width: 825px) {
   html {
     background-position: left;
     background-size: 410%;
